@@ -1,0 +1,4 @@
+# Build artefacts and editor noise — the theme itself is the deliverable.
+*.zip
+.DS_Store
+node_modules/
