@@ -182,7 +182,7 @@ function indfir_tagdiv_admin_notice() {
 			<strong><?php esc_html_e( 'Indfir:', 'indfir' ); ?></strong>
 			<?php
 			esc_html_e(
-				'Plugin tagDiv (tagDiv Composer / Cloud Library dan sejenisnya) masih aktif. Plugin itu membutuhkan tema Newspaper dan akan mematikan halaman depan tanpa tema tersebut. Tema ini menonaktifkan hook-nya secara otomatis sebagai pengaman, tetapi sebaiknya plugin-plugin itu dinonaktifkan.',
+				'The tagDiv plugins (tagDiv Composer / Cloud Library and similar) are still active. Those plugins require the Newspaper theme and will break the front end without it. This theme automatically disables their hooks as a safety measure, but you should deactivate those plugins.',
 				'indfir'
 			);
 			?>

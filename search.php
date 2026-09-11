@@ -17,7 +17,7 @@ get_header();
 			<?php
 			printf(
 				/* translators: %s: search term. */
-				esc_html__( 'Hasil untuk: %s', 'indfir' ),
+				esc_html__( 'Results for: %s', 'indfir' ),
 				'<span>' . esc_html( get_search_query() ) . '</span>'
 			);
 			?>
@@ -26,7 +26,7 @@ get_header();
 			<?php
 			printf(
 				/* translators: %d: number of results. */
-				esc_html( _n( '%d artikel ditemukan.', '%d artikel ditemukan.', (int) $GLOBALS['wp_query']->found_posts, 'indfir' ) ),
+				esc_html( _n( '%d article found.', '%d articles found.', (int) $GLOBALS['wp_query']->found_posts, 'indfir' ) ),
 				(int) $GLOBALS['wp_query']->found_posts
 			);
 			?>
@@ -60,7 +60,7 @@ get_header();
 					</div>
 					<?php indfir_pagination(); ?>
 				<?php else : ?>
-					<p><?php esc_html_e( 'Tidak ada yang cocok. Coba kata kunci lain.', 'indfir' ); ?></p>
+					<p><?php esc_html_e( 'No matches found. Try different keywords.', 'indfir' ); ?></p>
 				<?php endif; ?>
 			</div>
 

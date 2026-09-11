@@ -41,7 +41,7 @@ get_header();
 					</div>
 					<?php indfir_pagination(); ?>
 				<?php else : ?>
-					<p><?php esc_html_e( 'Belum ada artikel.', 'indfir' ); ?></p>
+					<p><?php esc_html_e( 'No articles yet.', 'indfir' ); ?></p>
 					<?php get_search_form(); ?>
 				<?php endif; ?>
 			</div>

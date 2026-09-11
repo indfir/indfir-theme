@@ -47,7 +47,7 @@ get_header();
 					</div>
 					<?php indfir_pagination(); ?>
 				<?php else : ?>
-					<p><?php esc_html_e( 'Tidak ada artikel di arsip ini.', 'indfir' ); ?></p>
+					<p><?php esc_html_e( 'No articles in this archive.', 'indfir' ); ?></p>
 					<?php get_search_form(); ?>
 				<?php endif; ?>
 			</div>

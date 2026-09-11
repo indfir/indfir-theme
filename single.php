@@ -12,7 +12,7 @@ get_header();
 
 <div class="if-nowreading" id="if-nowreading" aria-hidden="true">
 	<div class="if-nowreading__inner">
-		<span class="if-nowreading__label"><?php esc_html_e( 'Sedang dibaca', 'indfir' ); ?></span>
+		<span class="if-nowreading__label"><?php esc_html_e( 'Now reading', 'indfir' ); ?></span>
 		<span class="if-nowreading__title"><?php the_title(); ?></span>
 	</div>
 </div>
@@ -24,7 +24,7 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 				?>
-				<aside class="if-read__rail" aria-label="<?php esc_attr_e( 'Bagikan artikel', 'indfir' ); ?>">
+				<aside class="if-read__rail" aria-label="<?php esc_attr_e( 'Share article', 'indfir' ); ?>">
 					<?php indfir_share_buttons( 'rail' ); ?>
 				</aside>
 
@@ -47,8 +47,8 @@ get_header();
 
 							<div class="if-entry__meta">
 								<span>
-									<?php esc_html_e( 'Oleh', 'indfir' ); ?>
-									<a href="#if-author" title="<?php esc_attr_e( 'Lihat profil penulis', 'indfir' ); ?>">
+									<?php esc_html_e( 'By', 'indfir' ); ?>
+									<a href="#if-author" title="<?php esc_attr_e( 'View author profile', 'indfir' ); ?>">
 										<?php the_author(); ?>
 									</a>
 								</span>
@@ -58,11 +58,11 @@ get_header();
 								</time>
 								<?php if ( get_the_modified_date() !== get_the_date() ) : ?>
 									<span class="sep">&middot;</span>
-									<span><?php printf( esc_html__( 'Diperbarui %s', 'indfir' ), esc_html( get_the_modified_date() ) ); ?></span>
+									<span><?php printf( esc_html__( 'Updated %s', 'indfir' ), esc_html( get_the_modified_date() ) ); ?></span>
 								<?php endif; ?>
 								<?php if ( comments_open() ) : ?>
 									<span class="sep">&middot;</span>
-									<a href="#comments"><?php comments_number( esc_html__( 'Belum ada komentar', 'indfir' ), esc_html__( '1 komentar', 'indfir' ), esc_html__( '% komentar', 'indfir' ) ); ?></a>
+									<a href="#comments"><?php comments_number( esc_html__( 'No comments yet', 'indfir' ), esc_html__( '1 comment', 'indfir' ), esc_html__( '% comments', 'indfir' ) ); ?></a>
 								<?php endif; ?>
 								<span class="sep">&middot;</span>
 								<span class="if-entry__read">⏱ <?php echo esc_html( indfir_reading_time() ); ?></span>
@@ -118,13 +118,13 @@ get_header();
 								<nav class="if-prevnext">
 									<div class="if-prevnext__prev">
 										<?php if ( $if_prev ) : ?>
-											<div class="if-prevnext__label"><?php esc_html_e( 'Sebelumnya', 'indfir' ); ?></div>
+											<div class="if-prevnext__label"><?php esc_html_e( 'Previous', 'indfir' ); ?></div>
 											<a href="<?php echo esc_url( get_permalink( $if_prev ) ); ?>"><?php echo esc_html( get_the_title( $if_prev ) ); ?></a>
 										<?php endif; ?>
 									</div>
 									<div class="if-prevnext__next">
 										<?php if ( $if_next ) : ?>
-											<div class="if-prevnext__label"><?php esc_html_e( 'Berikutnya', 'indfir' ); ?></div>
+											<div class="if-prevnext__label"><?php esc_html_e( 'Next', 'indfir' ); ?></div>
 											<a href="<?php echo esc_url( get_permalink( $if_next ) ); ?>"><?php echo esc_html( get_the_title( $if_next ) ); ?></a>
 										<?php endif; ?>
 									</div>

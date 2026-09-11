@@ -43,9 +43,9 @@ function indfir_setup() {
 
 	register_nav_menus(
 		array(
-			'primary' => __( 'Menu Utama (navbar)', 'indfir' ),
-			'topbar'  => __( 'Menu Atas (top bar)', 'indfir' ),
-			'footer'  => __( 'Menu Footer', 'indfir' ),
+			'primary' => __( 'Primary Menu (navbar)', 'indfir' ),
+			'topbar'  => __( 'Top Menu (top bar)', 'indfir' ),
+			'footer'  => __( 'Footer Menu', 'indfir' ),
 		)
 	);
 
@@ -166,9 +166,9 @@ function indfir_darken( $hex, $percent ) {
 function indfir_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => __( 'Sidebar Utama', 'indfir' ),
+			'name'          => __( 'Main Sidebar', 'indfir' ),
 			'id'            => 'sidebar-main',
-			'description'   => __( 'Tampil di samping artikel dan arsip.', 'indfir' ),
+			'description'   => __( 'Appears beside articles and archives.', 'indfir' ),
 			'before_widget' => '<section id="%1$s" class="if-widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="if-widget__title">',
@@ -180,9 +180,9 @@ function indfir_widgets_init() {
 		register_sidebar(
 			array(
 				/* translators: %d: footer column number. */
-				'name'          => sprintf( __( 'Footer Kolom %d', 'indfir' ), $i ),
+				'name'          => sprintf( __( 'Footer Column %d', 'indfir' ), $i ),
 				'id'            => 'footer-' . $i,
-				'description'   => __( 'Kosongkan untuk memakai tampilan footer bawaan.', 'indfir' ),
+				'description'   => __( 'Leave empty to use the default footer layout.', 'indfir' ),
 				'before_widget' => '<section id="%1$s" class="if-widget %2$s">',
 				'after_widget'  => '</section>',
 				'before_title'  => '<h2 class="if-widget__title">',
@@ -343,19 +343,19 @@ function indfir_setup_default_menus() {
 
 	$locations = get_nav_menu_locations();
 	$categories = array(
-		'Berita'       => 'berita',
-		'Teknologi'    => 'teknologi',
-		'Ekonomi'      => 'ekonomi',
-		'Olahraga'     => 'olahraga',
-		'Sains'        => 'sains',
-		'Data & AI'    => 'data-ai',
-		'Gaya Hidup'   => 'gaya-hidup',
+		'News'       => 'berita',
+		'Technology' => 'teknologi',
+		'Economy'    => 'ekonomi',
+		'Sports'     => 'olahraga',
+		'Science'    => 'sains',
+		'Data & AI'  => 'data-ai',
+		'Lifestyle'  => 'gaya-hidup',
 	);
 
-	// Check or create "Kategori Utama" menu
-	$cat_menu = wp_get_nav_menu_object( 'Kategori Utama' );
+	// Check or create "Main Categories" menu
+	$cat_menu = wp_get_nav_menu_object( 'Main Categories' );
 	if ( ! $cat_menu ) {
-		$cat_menu_id = wp_create_nav_menu( 'Kategori Utama' );
+		$cat_menu_id = wp_create_nav_menu( 'Main Categories' );
 		if ( ! is_wp_error( $cat_menu_id ) ) {
 			// Add Home
 			wp_update_nav_menu_item( $cat_menu_id, 0, array(
@@ -445,7 +445,7 @@ function indfir_setup_adsense_compliance() {
 	$contact_page = get_page_by_path( 'contact' );
 	if ( $contact_page ) {
 		$content = $contact_page->post_content;
-		$new_phrase = 'Untuk saat ini, seluruh korespondensi dan pengiriman pesan dilayani secara langsung melalui email resmi kami di <strong>admin@indfir.com</strong>. Tim redaksi kami berkomitmen untuk merespons semua pesan dalam 1-2 hari kerja.';
+		$new_phrase = 'For the time being, all correspondence and message delivery are handled directly through our official email at <strong>admin@indfir.com</strong>. Our editorial team is committed to responding to all messages within 1-2 business days.';
 		if ( strpos( $content, 'formulir kontak di bawah ini' ) !== false ) {
 			$content = preg_replace(
 				'/<p>Selain email, Anda juga dapat menggunakan formulir kontak di bawah ini[^<]*<\/p>/i',
@@ -459,57 +459,57 @@ function indfir_setup_adsense_compliance() {
 		}
 	}
 
-	// 3. Create 'Pedoman Pemberitaan Media Siber' page if not exists
+	// 3. Create 'Online Media Editorial Guidelines' page if not exists
 	$pedoman_page = get_page_by_path( 'pedoman-media-siber' );
 	if ( ! $pedoman_page ) {
-		$pedoman_content = '<h2>Pedoman Pemberitaan Media Siber Indfir.com</h2>
-<p>Kemerdekaan berpendapat, kemerdekaan berekspresi, dan kemerdekaan pers adalah hak asasi manusia yang dilindungi oleh Pancasila, Undang-Undang Dasar 1945, dan Deklarasi Universal Hak Asasi Manusia PBB. Keberadaan media siber di Indonesia juga merupakan bagian dari kemerdekaan berpendapat, kemerdekaan berekspresi, dan kemerdekaan pers.</p>
-<p>Indfir.com mematuhi dan menjalankan <strong>Pedoman Pemberitaan Media Siber</strong> yang ditetapkan oleh Dewan Pers dan komunitas pers di Jakarta pada 3 Februari 2012 sebagai berikut:</p>
+		$pedoman_content = '<h2>Indfir.com Online Media Editorial Guidelines</h2>
+<p>Freedom of opinion, freedom of expression, and freedom of the press are human rights protected by the Universal Declaration of Human Rights. The existence of online media in Indonesia is also part of freedom of opinion, freedom of expression, and freedom of the press.</p>
+<p>Indfir.com complies with and adheres to the <strong>Online Media Editorial Guidelines</strong> established by the Press Council and the press community in Jakarta on February 3, 2012, as follows:</p>
 <hr>
-<h3>1. Ruang Lingkup</h3>
-<p>Media Siber adalah segala bentuk media yang menggunakan wahana internet dan melaksanakan kegiatan jurnalistik, serta memenuhi persyaratan Undang-Undang Pokok Pers dan Standar Perusahaan Pers yang ditetapkan Dewan Pers. Isi Buatan Pengguna (User Generated Content) adalah segala isi yang dibuat dan atau dipublikasikan oleh pengguna media siber, antara lain artikel, gambar, komentar, suara, video dan berbagai bentuk unggahan yang melekat pada media siber.</p>
+<h3>1. Scope</h3>
+<p>Online Media is any form of media that uses the internet and carries out journalistic activities, and meets the requirements of the Press Act and Press Company Standards established by the Press Council. User Generated Content is any content created and/or published by online media users, including articles, images, comments, audio, video, and various forms of uploads attached to online media.</p>
 <hr>
-<h3>2. Verifikasi dan Keberimbangan Berita</h3>
+<h3>2. Verification and News Balance</h3>
 <ul>
-<li>Setiap berita harus melalui proses verifikasi fakta dan konfirmasi kepada pihak-pihak terkait sebelum dipublikasikan.</li>
-<li>Berita yang dapat merugikan pihak lain memerlukan verifikasi pada berita yang sama untuk memenuhi prinsip akurasi dan keberimbangan (cover both sides).</li>
-<li>Setiap berita harus mencantumkan sumber informasi secara jelas dan dapat dipertanggungjawabkan demi transparansi publik.</li>
+<li>Every news article must undergo a fact verification process and confirmation from relevant parties before publication.</li>
+<li>News that may harm other parties requires verification within the same article to fulfill the principles of accuracy and balance (cover both sides).</li>
+<li>Every news article must clearly state its information sources in an accountable manner for public transparency.</li>
 </ul>
 <hr>
-<h3>3. Isi Buatan Pengguna (User Generated Content)</h3>
+<h3>3. User Generated Content</h3>
 <ul>
-<li>Indfir.com mewajibkan setiap pengguna yang menyampaikan komentar atau tulisan untuk tunduk pada etika dan hukum yang berlaku.</li>
-<li>Indfir.com berhak menyunting, menghapus, atau tidak menayangkan komentar yang mengandung unsur fitnah, kebencian berbasis SARA, pornografi, ujaran provokatif, atau pelanggaran privasi.</li>
-<li>Redaksi menyediakan mekanisme pelaporan terhadap isi buatan pengguna yang dinilai melanggar ketentuan hukum.</li>
+<li>Indfir.com requires every user who submits comments or writings to comply with applicable ethics and laws.</li>
+<li>Indfir.com reserves the right to edit, remove, or not publish comments containing defamation, hate speech based on ethnicity, religion, race, or inter-group relations (SARA), pornography, provocative speech, or privacy violations.</li>
+<li>The editorial team provides a reporting mechanism for user-generated content deemed to violate legal provisions.</li>
 </ul>
 <hr>
-<h3>4. Ralat, Koreksi, dan Hak Jawab</h3>
+<h3>4. Corrections, Rectifications, and Right of Reply</h3>
 <ul>
-<li>Ralat, koreksi, dan hak jawab mengacu pada Undang-Undang Pers, Kode Etik Jurnalistik, dan Pedoman Pemberitaan Media Siber yang ditetapkan Dewan Pers.</li>
-<li>Ralat, koreksi, dan atau hak jawab wajib ditautkan pada berita yang diralat, dikoreksi atau yang diberi hak jawab.</li>
-<li>Pada setiap berita ralat, koreksi, dan hak jawab wajib dicantumkan waktu pemuatan ralat, koreksi, dan atau hak jawab tersebut.</li>
+<li>Corrections, rectifications, and the right of reply refer to the Press Act, the Journalistic Code of Ethics, and the Online Media Editorial Guidelines established by the Press Council.</li>
+<li>Corrections, rectifications, and/or the right of reply must be linked to the article that was corrected, rectified, or granted the right of reply.</li>
+<li>Every correction, rectification, and right of reply must include the time of publication of the correction, rectification, and/or right of reply.</li>
 </ul>
 <hr>
-<h3>5. Pencabutan Berita</h3>
+<h3>5. Article Retraction</h3>
 <ul>
-<li>Berita yang sudah dipublikasikan tidak dapat dicabut karena alasan penyensoran dari pihak luar redaksi, kecuali terkait masalah SARA, kesusilaan, masa depan anak, pengalaman traumatik korban atau berdasarkan pertimbangan khusus lain yang ditetapkan Dewan Pers.</li>
-<li>Pencabutan berita wajib disertai dengan alasan pencabutan dan diumumkan kepada publik secara transparan.</li>
+<li>News that has been published cannot be retracted due to censorship from parties outside the editorial team, except in cases involving SARA, decency, the future of children, traumatic experiences of victims, or based on other special considerations determined by the Press Council.</li>
+<li>Article retraction must be accompanied by the reason for retraction and announced to the public transparently.</li>
 </ul>
 <hr>
-<h3>6. Hak Cipta dan Kutipan</h3>
-<p>Indfir.com menghormati hak cipta dan kekayaan intelektual pihak lain. Seluruh kutipan informasi, data riset, dan gambar yang berasal dari pihak ketiga selalu dicantumkan sumber dan kredit atribusinya secara jelas.</p>
+<h3>6. Copyright and Quotations</h3>
+<p>Indfir.com respects the copyright and intellectual property of others. All quotations of information, research data, and images from third parties always include clear source attribution and credit.</p>
 <hr>
-<h3>7. Mekanisme Pengaduan Publik</h3>
-<p>Masyarakat atau pihak yang merasa dirugikan oleh materi pemberitaan di Indfir.com dapat menyampaikan pengaduan, ralat, atau hak jawab secara tertulis kepada tim redaksi melalui:</p>
+<h3>7. Public Complaint Mechanism</h3>
+<p>Members of the public or parties who feel harmed by editorial content on Indfir.com may submit complaints, corrections, or exercise their right of reply in writing to the editorial team through:</p>
 <ul>
 <li><strong>Email:</strong> admin@indfir.com</li>
-<li><strong>Subjek Email:</strong> Hak Jawab / Pengaduan Pemberitaan</li>
-<li><strong>Alamat Redaksi:</strong> Jakarta, Indonesia</li>
+<li><strong>Email Subject:</strong> Right of Reply / Editorial Complaint</li>
+<li><strong>Editorial Address:</strong> Jakarta, Indonesia</li>
 </ul>
 <p style="text-align: center;"><em><strong>Indfir.com – Elevating Your Future</strong></em></p>';
 
 		wp_insert_post( array(
-			'post_title'   => 'Pedoman Media Siber',
+			'post_title'   => 'Online Media Guidelines',
 			'post_name'    => 'pedoman-media-siber',
 			'post_content' => $pedoman_content,
 			'post_status'  => 'publish',
@@ -520,31 +520,31 @@ function indfir_setup_adsense_compliance() {
 	// 4. Create 'Disclaimer' page if not exists
 	$disclaimer_page = get_page_by_path( 'disclaimer' );
 	if ( ! $disclaimer_page ) {
-		$disclaimer_content = '<h2>Disclaimer (Sanggahan) Indfir.com</h2>
-<p><strong>Terakhir Diperbarui:</strong> September 2026</p>
-<p>Selamat datang di Indfir.com. Dengan mengakses dan menggunakan situs ini, Anda menyatakan setuju dan terikat oleh syarat dan ketentuan dalam Disclaimer ini. Harap membaca informasi berikut dengan saksama.</p>
+		$disclaimer_content = '<h2>Indfir.com Disclaimer</h2>
+<p><strong>Last Updated:</strong> September 2026</p>
+<p>Welcome to Indfir.com. By accessing and using this site, you agree to be bound by the terms and conditions of this Disclaimer. Please read the following information carefully.</p>
 <hr>
-<h3>1. Akurasi dan Tujuan Informasi</h3>
-<p>Seluruh materi, artikel, data, dan opini yang dipublikasikan di <strong>Indfir.com</strong> disajikan semata-mata untuk tujuan informasi umum dan edukasi. Meskipun tim redaksi kami berusaha menyajikan informasi yang akurat, mutakhir, dan berdasarkan sumber yang kredibel, Indfir.com tidak memberikan jaminan atau garansi dalam bentuk apa pun, baik tersurat maupun tersirat, mengenai kelengkapan, ketepatan, keandalan, atau kesesuaian informasi yang tersedia di situs ini.</p>
+<h3>1. Accuracy and Purpose of Information</h3>
+<p>All materials, articles, data, and opinions published on <strong>Indfir.com</strong> are provided solely for the purpose of general information and education. Although our editorial team strives to present accurate, up-to-date, and credible information, Indfir.com makes no representations or warranties of any kind, express or implied, regarding the completeness, accuracy, reliability, or suitability of the information available on this site.</p>
 <hr>
-<h3>2. Sanggahan Finansial, Investasi, dan Pasar Modal</h3>
-<p>Konten yang berkaitan dengan pasar saham, ekonomi, aset kripto, keuangan terdesentralisasi (DeFi), dan instrumen investasi lainnya di Indfir.com <strong>BUKAN merupakan nasihat keuangan, rekomendasi beli/jual, atau ajakan investasi finansial resmi</strong>.</p>
-<p>Setiap keputusan keuangan atau investasi yang Anda ambil sepenuhnya merupakan tanggung jawab dan risiko pribadi Anda. Kami sangat menyarankan pembaca untuk selalu melakukan riset mandiri (<em>Do Your Own Research - DYOR</em>) dan berkonsultasi dengan penasihat keuangan profesional berlisensi sebelum mengambil keputusan investasi apa pun.</p>
+<h3>2. Financial, Investment, and Capital Market Disclaimer</h3>
+<p>Content related to the stock market, economy, crypto assets, decentralized finance (DeFi), and other investment instruments on Indfir.com is <strong>NOT financial advice, buy/sell recommendations, or official financial investment solicitation</strong>.</p>
+<p>Any financial or investment decision you make is entirely your own responsibility and risk. We strongly recommend that readers always conduct their own research (<em>Do Your Own Research - DYOR</em>) and consult with a licensed professional financial advisor before making any investment decisions.</p>
 <hr>
-<h3>3. Tautan ke Pihak Ketiga (External Links)</h3>
-<p>Indfir.com mungkin memuat tautan menuju situs web eksternal yang dioperasikan oleh pihak ketiga. Kami tidak memiliki kendali atas isi, kebijakan privasi, atau praktik situs web pihak ketiga tersebut. Penyertaan tautan eksternal tidak serta merta mencerminkan rekomendasi atau dukungan terhadap pandangan yang diungkapkan di dalamnya.</p>
+<h3>3. Third-Party Links (External Links)</h3>
+<p>Indfir.com may contain links to external websites operated by third parties. We have no control over the content, privacy policies, or practices of those third-party websites. The inclusion of external links does not necessarily imply a recommendation or endorsement of the views expressed therein.</p>
 <hr>
-<h3>4. Kebijakan Periklanan dan Google AdSense</h3>
-<p>Indfir.com menggunakan layanan periklanan pihak ketiga, termasuk <strong>Google AdSense</strong>, untuk menampilkan iklan saat Anda mengunjungi situs kami. Vendor pihak ketiga, termasuk Google, menggunakan cookie (seperti cookie DART) untuk menayangkan iklan berdasarkan kunjungan pengguna ke situs ini dan situs web lain di internet. Indfir.com tidak bertanggung jawab atas produk, layanan, atau klaim yang ditawarkan oleh pengiklan pihak ketiga.</p>
+<h3>4. Advertising Policy and Google AdSense</h3>
+<p>Indfir.com uses third-party advertising services, including <strong>Google AdSense</strong>, to display ads when you visit our site. Third-party vendors, including Google, use cookies (such as the DART cookie) to serve ads based on a user\'s visits to this site and other websites on the internet. Indfir.com is not responsible for the products, services, or claims offered by third-party advertisers.</p>
 <hr>
-<h3>5. Hak Cipta dan Kekayaan Intelektual</h3>
-<p>Seluruh teks, tata letak, grafis orisinal, dan materi editorial di Indfir.com dilindungi oleh undang-undang hak cipta Republik Indonesia. Pengambilan atau penyalinan sebagian konten untuk keperluan wajar diperbolehkan dengan syarat mencantumkan atribusi yang jelas serta tautan aktif kembali menuju artikel sumber di Indfir.com.</p>
+<h3>5. Copyright and Intellectual Property</h3>
+<p>All text, layout, original graphics, and editorial content on Indfir.com are protected by the copyright laws of the Republic of Indonesia. Partial copying of content for fair use is permitted provided that clear attribution and an active link back to the source article on Indfir.com are included.</p>
 <hr>
-<h3>6. Kontak dan Klarifikasi</h3>
-<p>Jika Anda memiliki pertanyaan, memerlukan klarifikasi, atau ingin menyampaikan tanggapan terkait isi Disclaimer ini, silakan hubungi kami di:</p>
+<h3>6. Contact and Clarification</h3>
+<p>If you have any questions, need clarification, or wish to provide feedback regarding this Disclaimer, please contact us at:</p>
 <ul>
 <li><strong>Email:</strong> admin@indfir.com</li>
-<li><strong>Halaman Kontak:</strong> <a href="' . esc_url( home_url( '/contact/' ) ) . '">https://indfir.com/contact/</a></li>
+<li><strong>Contact Page:</strong> <a href="' . esc_url( home_url( '/contact/' ) ) . '">https://indfir.com/contact/</a></li>
 </ul>
 <p style="text-align: center;"><em><strong>Indfir.com – Elevating Your Future</strong></em></p>';
 
@@ -576,7 +576,7 @@ function indfir_setup_adsense_compliance() {
 		$topbar_links = array(
 			'About'               => home_url( '/about/' ),
 			'Contact'             => home_url( '/contact/' ),
-			'Pedoman Media Siber' => home_url( '/pedoman-media-siber/' ),
+			'Online Media Guidelines' => home_url( '/pedoman-media-siber/' ),
 			'Privacy Policy'      => home_url( '/privacy-policy/' ),
 		);
 		$tb_order = 1;
@@ -609,7 +609,7 @@ function indfir_setup_adsense_compliance() {
 			'About'               => home_url( '/about/' ),
 			'Contact'             => home_url( '/contact/' ),
 			'Editorial Policy'    => home_url( '/editorial-policy/' ),
-			'Pedoman Media Siber' => home_url( '/pedoman-media-siber/' ),
+			'Online Media Guidelines' => home_url( '/pedoman-media-siber/' ),
 			'Disclaimer'          => home_url( '/disclaimer/' ),
 			'Privacy Policy'      => home_url( '/privacy-policy/' ),
 			'Terms of Service'    => home_url( '/terms-of-service/' ),

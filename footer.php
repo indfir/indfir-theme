@@ -64,7 +64,7 @@ $if_has_widgets = is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-
 				</div>
 
 				<div class="if-footer__col">
-					<h2 class="if-widget__title"><?php esc_html_e( 'Terbaru', 'indfir' ); ?></h2>
+					<h2 class="if-widget__title"><?php esc_html_e( 'Latest', 'indfir' ); ?></h2>
 					<?php
 					$if_latest = indfir_block_query( 0, 3 );
 					if ( $if_latest->have_posts() ) :
@@ -90,7 +90,7 @@ $if_has_widgets = is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-
 				</div>
 
 				<div class="if-footer__col">
-					<h2 class="if-widget__title"><?php esc_html_e( 'Populer', 'indfir' ); ?></h2>
+					<h2 class="if-widget__title"><?php esc_html_e( 'Popular', 'indfir' ); ?></h2>
 					<?php
 					$if_pop = indfir_block_query( 0, 3, array(), 'views' );
 					if ( $if_pop->have_posts() ) :
@@ -116,7 +116,7 @@ $if_has_widgets = is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-
 				</div>
 
 				<div class="if-footer__col">
-					<h2 class="if-widget__title"><?php esc_html_e( 'Jelajah', 'indfir' ); ?></h2>
+					<h2 class="if-widget__title"><?php esc_html_e( 'Browse', 'indfir' ); ?></h2>
 					<ul class="if-list">
 						<?php
 						wp_list_categories(

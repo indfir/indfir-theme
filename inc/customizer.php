@@ -17,7 +17,7 @@ function indfir_category_choices() {
 		return $choices;
 	}
 
-	$choices = array( 0 => __( '— Semua kategori —', 'indfir' ) );
+	$choices = array( 0 => __( '— All categories —', 'indfir' ) );
 
 	$terms = get_categories(
 		array(
@@ -67,8 +67,8 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'indfir_header_tagline',
 		array(
-			'label'       => __( 'Tagline di samping logo', 'indfir' ),
-			'description' => __( 'Contoh: Elevating Your Future. Kosongkan untuk menyembunyikan.', 'indfir' ),
+			'label'       => __( 'Tagline next to logo', 'indfir' ),
+			'description' => __( 'Example: Elevating Your Future. Leave empty to hide.', 'indfir' ),
 			'section'     => 'title_tagline',
 			'type'        => 'text',
 		)
@@ -101,7 +101,7 @@ function indfir_customize_register( $wp_customize ) {
 			$wp_customize,
 			'indfir_color_primary',
 			array(
-				'label'       => __( 'Warna utama (navbar)', 'indfir' ),
+				'label'       => __( 'Primary color (navbar)', 'indfir' ),
 				'section'     => 'colors',
 			)
 		)
@@ -119,7 +119,7 @@ function indfir_customize_register( $wp_customize ) {
 			$wp_customize,
 			'indfir_color_accent',
 			array(
-				'label'   => __( 'Warna aksen (kategori, link)', 'indfir' ),
+				'label'   => __( 'Accent color (categories, links)', 'indfir' ),
 				'section' => 'colors',
 			)
 		)
@@ -131,7 +131,7 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'indfir_typography',
 		array(
-			'title'    => __( 'Tipografi & Layout', 'indfir' ),
+			'title'    => __( 'Typography & Layout', 'indfir' ),
 			'priority' => 45,
 		)
 	);
@@ -146,8 +146,8 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'indfir_google_fonts',
 		array(
-			'label'       => __( 'Muat Google Fonts (Bitter + Jost)', 'indfir' ),
-			'description' => __( 'Matikan bila ingin memakai font sistem saja agar lebih cepat.', 'indfir' ),
+			'label'       => __( 'Load Google Fonts (Bitter + Jost)', 'indfir' ),
+			'description' => __( 'Turn off to use system fonts only for faster performance.', 'indfir' ),
 			'section'     => 'indfir_typography',
 			'type'        => 'checkbox',
 		)
@@ -163,8 +163,8 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'indfir_font_heading',
 		array(
-			'label'       => __( 'Font judul (CSS font stack)', 'indfir' ),
-			'description' => __( "Kosongkan untuk bawaan. Contoh: 'Playfair Display', Georgia, serif", 'indfir' ),
+			'label'       => __( 'Heading font (CSS font stack)', 'indfir' ),
+			'description' => __( "Leave empty for default. Example: 'Playfair Display', Georgia, serif", 'indfir' ),
 			'section'     => 'indfir_typography',
 			'type'        => 'text',
 		)
@@ -180,7 +180,7 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'indfir_font_body',
 		array(
-			'label'   => __( 'Font isi (CSS font stack)', 'indfir' ),
+			'label'   => __( 'Body font (CSS font stack)', 'indfir' ),
 			'section' => 'indfir_typography',
 			'type'    => 'text',
 		)
@@ -196,7 +196,7 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'indfir_container_width',
 		array(
-			'label'       => __( 'Lebar kontainer (px)', 'indfir' ),
+			'label'       => __( 'Container width (px)', 'indfir' ),
 			'section'     => 'indfir_typography',
 			'type'        => 'number',
 			'input_attrs' => array(
@@ -217,7 +217,7 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'indfir_excerpt_length',
 		array(
-			'label'       => __( 'Panjang ringkasan (kata)', 'indfir' ),
+			'label'       => __( 'Excerpt length (words)', 'indfir' ),
 			'section'     => 'indfir_typography',
 			'type'        => 'number',
 			'input_attrs' => array(
@@ -249,7 +249,7 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'indfir_show_topbar',
 		array(
-			'label'   => __( 'Tampilkan top bar', 'indfir' ),
+			'label'   => __( 'Show top bar', 'indfir' ),
 			'section' => 'indfir_header',
 			'type'    => 'checkbox',
 		)
@@ -265,8 +265,8 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'indfir_topbar_text',
 		array(
-			'label'       => __( 'Teks kiri top bar', 'indfir' ),
-			'description' => __( 'Contoh: Jakarta. Tanggal hari ini ditampilkan otomatis di sebelahnya.', 'indfir' ),
+			'label'       => __( 'Top bar left text', 'indfir' ),
+			'description' => __( 'Example: Jakarta. Today\'s date is displayed automatically next to it.', 'indfir' ),
 			'section'     => 'indfir_header',
 			'type'        => 'text',
 		)
@@ -282,7 +282,7 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'indfir_show_date',
 		array(
-			'label'   => __( 'Tampilkan tanggal hari ini', 'indfir' ),
+			'label'   => __( 'Show today\'s date', 'indfir' ),
 			'section' => 'indfir_header',
 			'type'    => 'checkbox',
 		)
@@ -294,7 +294,7 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'indfir_social',
 		array(
-			'title'    => __( 'Media Sosial', 'indfir' ),
+			'title'    => __( 'Social Media', 'indfir' ),
 			'priority' => 47,
 		)
 	);
@@ -330,8 +330,8 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'indfir_homepage',
 		array(
-			'title'       => __( 'Beranda: Blok Konten', 'indfir' ),
-			'description' => __( 'Atur judul dan kategori tiap blok di halaman depan. Kosongkan judul untuk menyembunyikan blok.', 'indfir' ),
+			'title'       => __( 'Homepage: Content Blocks', 'indfir' ),
+			'description' => __( 'Set the title and category for each block on the front page. Leave the title empty to hide the block.', 'indfir' ),
 			'priority'    => 48,
 		)
 	);
@@ -346,7 +346,7 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'indfir_hero_label',
 		array(
-			'label'   => __( 'Label blok utama', 'indfir' ),
+			'label'   => __( 'Main block label', 'indfir' ),
 			'section' => 'indfir_homepage',
 			'type'    => 'text',
 		)
@@ -362,7 +362,7 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'indfir_popular_label',
 		array(
-			'label'   => __( 'Label kolom populer', 'indfir' ),
+			'label'   => __( 'Popular column label', 'indfir' ),
 			'section' => 'indfir_homepage',
 			'type'    => 'text',
 		)
@@ -370,12 +370,12 @@ function indfir_customize_register( $wp_customize ) {
 
 	// Four configurable category blocks.
 	$blocks = array(
-		1 => array( __( 'Blok 1 — 3 kolom', 'indfir' ), 'General' ),
-		2 => array( __( 'Blok 2 — samping blok 1', 'indfir' ), 'Data/AI' ),
-		3 => array( __( 'Blok 3 — samping blok 1', 'indfir' ), 'Astronomi' ),
-		4 => array( __( 'Blok 4 — sorotan besar', 'indfir' ), 'Teknologi' ),
-		5 => array( __( 'Blok 5 — sidebar blok 4', 'indfir' ), 'Sains' ),
-		6 => array( __( 'Blok 6 — lebar penuh', 'indfir' ), 'Trading & Kripto' ),
+		1 => array( __( 'Block 1 — 3 columns', 'indfir' ), 'General' ),
+		2 => array( __( 'Block 2 — beside block 1', 'indfir' ), 'Data/AI' ),
+		3 => array( __( 'Block 3 — beside block 1', 'indfir' ), 'Astronomy' ),
+		4 => array( __( 'Block 4 — large feature', 'indfir' ), 'Technology' ),
+		5 => array( __( 'Block 5 — block 4 sidebar', 'indfir' ), 'Science' ),
+		6 => array( __( 'Block 6 — full width', 'indfir' ), 'Trading & Crypto' ),
 	);
 
 	foreach ( $blocks as $i => $data ) {
@@ -389,7 +389,7 @@ function indfir_customize_register( $wp_customize ) {
 		$wp_customize->add_control(
 			'indfir_block' . $i . '_title',
 			array(
-				'label'   => $data[0] . ' — ' . __( 'judul', 'indfir' ),
+				'label'   => $data[0] . ' — ' . __( 'title', 'indfir' ),
 				'section' => 'indfir_homepage',
 				'type'    => 'text',
 			)
@@ -405,7 +405,7 @@ function indfir_customize_register( $wp_customize ) {
 		$wp_customize->add_control(
 			'indfir_block' . $i . '_cat',
 			array(
-				'label'   => $data[0] . ' — ' . __( 'kategori', 'indfir' ),
+				'label'   => $data[0] . ' — ' . __( 'category', 'indfir' ),
 				'section' => 'indfir_homepage',
 				'type'    => 'select',
 				'choices' => indfir_category_choices(),
@@ -416,15 +416,15 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'indfir_latest_title',
 		array(
-			'default'           => __( 'Terbaru', 'indfir' ),
+			'default'           => __( 'Latest', 'indfir' ),
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control(
 		'indfir_latest_title',
 		array(
-			'label'       => __( 'Judul daftar artikel terbaru', 'indfir' ),
-			'description' => __( 'Daftar ini yang membawa penomoran halaman di beranda.', 'indfir' ),
+			'label'       => __( 'Latest articles list title', 'indfir' ),
+			'description' => __( 'This is the list that carries page numbering on the homepage.', 'indfir' ),
 			'section'     => 'indfir_homepage',
 			'type'        => 'text',
 		)
@@ -436,17 +436,17 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'indfir_single',
 		array(
-			'title'    => __( 'Halaman Artikel', 'indfir' ),
+			'title'    => __( 'Article Page', 'indfir' ),
 			'priority' => 49,
 		)
 	);
 
 	$toggles = array(
-		'indfir_show_share'     => array( __( 'Tampilkan tombol berbagi', 'indfir' ), true ),
-		'indfir_show_related'   => array( __( 'Tampilkan artikel terkait', 'indfir' ), true ),
-		'indfir_show_author'    => array( __( 'Tampilkan kotak penulis', 'indfir' ), true ),
-		'indfir_show_prevnext'  => array( __( 'Tampilkan navigasi sebelum/berikutnya', 'indfir' ), true ),
-		'indfir_show_crumbs'    => array( __( 'Tampilkan breadcrumb', 'indfir' ), true ),
+		'indfir_show_share'     => array( __( 'Show share buttons', 'indfir' ), true ),
+		'indfir_show_related'   => array( __( 'Show related articles', 'indfir' ), true ),
+		'indfir_show_author'    => array( __( 'Show author box', 'indfir' ), true ),
+		'indfir_show_prevnext'  => array( __( 'Show previous/next navigation', 'indfir' ), true ),
+		'indfir_show_crumbs'    => array( __( 'Show breadcrumbs', 'indfir' ), true ),
 	);
 
 	foreach ( $toggles as $key => $data ) {
@@ -488,7 +488,7 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'indfir_footer_about_title',
 		array(
-			'label'   => __( 'Judul kolom pertama', 'indfir' ),
+			'label'   => __( 'First column title', 'indfir' ),
 			'section' => 'indfir_footer',
 			'type'    => 'text',
 		)
@@ -504,7 +504,7 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'indfir_footer_about',
 		array(
-			'label'   => __( 'Deskripsi footer', 'indfir' ),
+			'label'   => __( 'Footer description', 'indfir' ),
 			'section' => 'indfir_footer',
 			'type'    => 'textarea',
 		)
@@ -520,8 +520,8 @@ function indfir_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'indfir_footer_copyright',
 		array(
-			'label'       => __( 'Teks hak cipta', 'indfir' ),
-			'description' => __( 'Kosongkan untuk memakai "© tahun nama situs".', 'indfir' ),
+			'label'       => __( 'Copyright text', 'indfir' ),
+			'description' => __( 'Leave empty to use "© year site name".', 'indfir' ),
 			'section'     => 'indfir_footer',
 			'type'        => 'text',
 		)

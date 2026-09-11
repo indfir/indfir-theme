@@ -17,7 +17,7 @@ if ( post_password_required() ) {
 		indfir_section_head(
 			sprintf(
 				/* translators: %d: comment count. */
-				_n( '%d Komentar', '%d Komentar', (int) get_comments_number(), 'indfir' ),
+				_n( '%d Comment', '%d Comments', (int) get_comments_number(), 'indfir' ),
 				(int) get_comments_number()
 			),
 			0,
@@ -47,14 +47,14 @@ if ( post_password_required() ) {
 		?>
 
 		<?php if ( ! comments_open() ) : ?>
-			<p><?php esc_html_e( 'Komentar ditutup.', 'indfir' ); ?></p>
+			<p><?php esc_html_e( 'Comments are closed.', 'indfir' ); ?></p>
 		<?php endif; ?>
 	<?php endif; ?>
 
 	<?php
 	comment_form(
 		array(
-			'title_reply'        => __( 'Tinggalkan Komentar', 'indfir' ),
+			'title_reply'        => __( 'Leave a Comment', 'indfir' ),
 			'title_reply_before' => '<h2 class="if-widget__title">',
 			'title_reply_after'  => '</h2>',
 			'class_submit'       => 'if-btn',

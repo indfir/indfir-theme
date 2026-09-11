@@ -431,7 +431,7 @@ function indfir_breadcrumbs() {
 	} elseif ( is_category() || is_tag() || is_tax() ) {
 		echo '<span class="sep">/</span><span>' . esc_html( single_term_title( '', false ) ) . '</span>';
 	} elseif ( is_search() ) {
-		echo '<span class="sep">/</span><span>' . esc_html__( 'Hasil pencarian', 'indfir' ) . '</span>';
+		echo '<span class="sep">/</span><span>' . esc_html__( 'Search results', 'indfir' ) . '</span>';
 	} elseif ( is_page() ) {
 		echo '<span class="sep">/</span><span>' . esc_html( get_the_title() ) . '</span>';
 	}
@@ -471,7 +471,7 @@ function indfir_pagination( $query = null ) {
 			<?php
 			printf(
 				/* translators: 1: current page, 2: total pages. */
-				esc_html__( 'Halaman %1$d dari %2$d', 'indfir' ),
+				esc_html__( 'Page %1$d of %2$d', 'indfir' ),
 				(int) $current,
 				(int) $query->max_num_pages
 			);
@@ -544,7 +544,7 @@ function indfir_share_buttons( $variant = 'inline' ) {
 	if ( 'rail' === $variant ) {
 		printf(
 			'<span class="if-share__label">%s</span>',
-			esc_html__( 'Bagikan', 'indfir' )
+			esc_html__( 'Share', 'indfir' )
 		);
 	}
 
@@ -563,10 +563,10 @@ function indfir_share_buttons( $variant = 'inline' ) {
 	printf(
 		'<button type="button" class="if-share__btn if-share__btn--copy if-share__copy" data-url="%s" title="%s"><span class="screen-reader-text">%s</span>%s<span class="if-share__name">%s</span></button>',
 		esc_url( get_permalink() ),
-		esc_attr__( 'Salin tautan', 'indfir' ),
-		esc_html__( 'Salin tautan', 'indfir' ),
+		esc_attr__( 'Copy link', 'indfir' ),
+		esc_html__( 'Copy link', 'indfir' ),
 		indfir_icon( 'link' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- hardcoded SVG.
-		esc_html__( 'Salin', 'indfir' )
+		esc_html__( 'Copy', 'indfir' )
 	);
 
 	echo '</div>';
@@ -601,7 +601,7 @@ function indfir_related_posts() {
 	}
 	?>
 	<section class="if-related">
-		<?php indfir_section_head( __( 'Baca Juga', 'indfir' ), 0, 'if-head--plain' ); ?>
+		<?php indfir_section_head( __( 'Read Also', 'indfir' ), 0, 'if-head--plain' ); ?>
 		<div class="if-related__grid">
 			<?php
 			while ( $related->have_posts() ) {
@@ -696,11 +696,11 @@ function indfir_breaking_ticker() {
 		return;
 	}
 	?>
-	<div class="if-ticker" id="if-ticker" aria-label="<?php esc_attr_e( 'Berita Terkini', 'indfir' ); ?>">
+	<div class="if-ticker" id="if-ticker" aria-label="<?php esc_attr_e( 'Latest News', 'indfir' ); ?>">
 		<div class="if-wrap if-ticker__wrap">
 			<div class="if-ticker__badge">
 				<span class="if-ticker__pulse"></span>
-				<span class="if-ticker__title"><?php esc_html_e( 'TERKINI', 'indfir' ); ?></span>
+				<span class="if-ticker__title"><?php esc_html_e( 'LATEST', 'indfir' ); ?></span>
 			</div>
 			<div class="if-ticker__marquee">
 				<div class="if-ticker__track">

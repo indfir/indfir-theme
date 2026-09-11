@@ -14,8 +14,8 @@ get_header();
 	<div class="if-wrap">
 		<div class="if-404">
 			<p class="if-404__code">404</p>
-			<h1><?php esc_html_e( 'Halaman tidak ditemukan', 'indfir' ); ?></h1>
-			<p><?php esc_html_e( 'Tautan mungkin sudah berubah atau artikelnya dihapus.', 'indfir' ); ?></p>
+			<h1><?php esc_html_e( 'Page not found', 'indfir' ); ?></h1>
+			<p><?php esc_html_e( 'The link may have changed or the article has been removed.', 'indfir' ); ?></p>
 			<?php get_search_form(); ?>
 		</div>
 
@@ -24,7 +24,7 @@ get_header();
 		if ( $if_recent->have_posts() ) :
 			?>
 			<section style="margin-top:20px">
-				<?php indfir_section_head( __( 'Artikel Terbaru', 'indfir' ), 0, 'if-head--center' ); ?>
+				<?php indfir_section_head( __( 'Latest Articles', 'indfir' ), 0, 'if-head--center' ); ?>
 				<div class="if-related__grid">
 					<?php
 					while ( $if_recent->have_posts() ) :

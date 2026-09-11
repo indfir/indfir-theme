@@ -36,7 +36,7 @@ defined( 'ABSPATH' ) || exit;
 	<div class="if-read-progress" id="if-read-progress" aria-hidden="true"></div>
 <?php endif; ?>
 
-<a class="skip-link screen-reader-text" href="#if-content"><?php esc_html_e( 'Lompat ke konten', 'indfir' ); ?></a>
+<a class="skip-link screen-reader-text" href="#if-content"><?php esc_html_e( 'Skip to content', 'indfir' ); ?></a>
 
 <?php if ( get_theme_mod( 'indfir_show_topbar', true ) ) : ?>
 	<div class="if-topbar">
@@ -101,11 +101,11 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 
 		<button class="if-nav-toggle" aria-controls="if-primary-nav" aria-expanded="false">
-			<span class="screen-reader-text"><?php esc_html_e( 'Buka menu', 'indfir' ); ?></span>
+			<span class="screen-reader-text"><?php esc_html_e( 'Open menu', 'indfir' ); ?></span>
 			<?php echo indfir_icon( 'menu' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		</button>
 
-		<nav class="if-nav" id="if-primary-nav" aria-label="<?php esc_attr_e( 'Menu utama', 'indfir' ); ?>">
+		<nav class="if-nav" id="if-primary-nav" aria-label="<?php esc_attr_e( 'Main menu', 'indfir' ); ?>">
 			<?php
 			wp_nav_menu(
 				array(
@@ -119,13 +119,13 @@ defined( 'ABSPATH' ) || exit;
 			?>
 		</nav>
 
-		<button class="if-theme-toggle" id="if-theme-toggle" aria-label="<?php esc_attr_e( 'Ganti tema gelap/terang', 'indfir' ); ?>" title="<?php esc_attr_e( 'Ganti tema gelap/terang', 'indfir' ); ?>">
+		<button class="if-theme-toggle" id="if-theme-toggle" aria-label="<?php esc_attr_e( 'Toggle dark/light mode', 'indfir' ); ?>" title="<?php esc_attr_e( 'Toggle dark/light mode', 'indfir' ); ?>">
 			<span class="if-theme-toggle__icon if-theme-toggle__icon--moon"><?php echo indfir_icon( 'moon' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
 			<span class="if-theme-toggle__icon if-theme-toggle__icon--sun"><?php echo indfir_icon( 'sun' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
 		</button>
 
 		<button class="if-search-toggle" aria-controls="if-searchbar" aria-expanded="false">
-			<span class="screen-reader-text"><?php esc_html_e( 'Cari', 'indfir' ); ?></span>
+			<span class="screen-reader-text"><?php esc_html_e( 'Search', 'indfir' ); ?></span>
 			<?php echo indfir_icon( 'search' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		</button>
 	</div>

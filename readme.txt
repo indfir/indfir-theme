@@ -7,74 +7,74 @@ Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Tema majalah berita untuk indfir.com. Tanpa page builder, tanpa lisensi
-berbayar, tanpa dependensi plugin.
+A news magazine theme for indfir.com. No page builder, no paid licenses,
+no plugin dependencies.
 
-== Deskripsi ==
+== Description ==
 
-Indfir menyusun halaman depan secara otomatis dari kategori yang kamu pilih,
-sehingga tidak ada layout yang perlu dirakit ulang setiap hari. Susunan blok
-beranda:
+Indfir assembles the front page automatically from the categories you choose,
+so there is no layout that needs to be rebuilt every day. Homepage block
+layout:
 
-1. Hero      - berita utama, satu sorotan bergambar, dan kolom terpopuler.
-2. Blok 1-3  - satu kategori utama (dua kolom) diapit dua kategori sempit.
-3. Blok 4-5  - dua sorotan besar bergambar plus sidebar kategori.
-4. Blok 6    - kategori lebar penuh: tiga sorotan dan deretan kartu.
-5. Terbaru   - daftar artikel terbaru; blok ini yang membawa penomoran halaman.
+1. Hero      - main news, one featured highlight with image, and a most popular column.
+2. Block 1-3 - one main category (two columns) flanked by two narrow categories.
+3. Block 4-5 - two large featured highlights with images plus a category sidebar.
+4. Block 6   - full-width category: three highlights and a row of cards.
+5. Latest    - list of latest articles; this block carries the page numbering.
 
-Pada halaman 2 dan seterusnya hanya daftar "Terbaru" yang tampil, sehingga
-navigasi halaman berperilaku seperti arsip biasa.
+On page 2 and beyond, only the "Latest" list is displayed, so page
+navigation behaves like a regular archive.
 
-== Pengaturan ==
+== Settings ==
 
-Semua diatur lewat Tampilan > Sesuaikan (Customizer):
+Everything is configured via Appearance > Customize (Customizer):
 
-* Identitas Situs   - logo dan tagline di samping logo.
-* Warna             - warna utama (navbar) dan warna aksen.
-* Tipografi & Layout- Google Fonts on/off, font stack sendiri, lebar
-                      kontainer, panjang ringkasan.
-* Header & Top Bar  - tampilkan top bar, teks kiri, tanggal otomatis.
-* Media Sosial      - Facebook, Instagram, X, YouTube.
-* Beranda: Blok     - judul dan kategori untuk tiap blok. Kosongkan judul
-                      untuk menyembunyikan blok.
-* Halaman Artikel   - tombol berbagi, artikel terkait, kotak penulis,
-                      navigasi sebelum/berikutnya, breadcrumb.
-* Footer            - judul kolom, deskripsi, teks hak cipta.
+* Site Identity     - logo and tagline next to the logo.
+* Colors            - primary color (navbar) and accent color.
+* Typography & Layout - Google Fonts on/off, custom font stack, container
+                        width, excerpt length.
+* Header & Top Bar  - show top bar, left text, automatic date.
+* Social Media      - Facebook, Instagram, X, YouTube.
+* Homepage: Blocks  - title and category for each block. Leave the title
+                      empty to hide the block.
+* Single Post       - share buttons, related posts, author box,
+                      previous/next navigation, breadcrumb.
+* Footer            - column titles, description, copyright text.
 
-== Lokasi Menu ==
+== Menu Locations ==
 
-* Menu Utama (navbar) - mendukung dropdown sampai 3 tingkat.
-* Menu Atas (top bar) - satu tingkat, dipakai ulang di kolom pertama footer.
-* Menu Footer        - satu tingkat, tampil di atas kolom footer.
+* Primary Menu (navbar) - supports dropdowns up to 3 levels deep.
+* Top Menu (top bar)    - single level, reused in the first footer column.
+* Footer Menu           - single level, displayed above the footer columns.
 
-Bila belum ada menu yang dipasang di "Menu Utama", tema menampilkan Home
-plus tujuh kategori teramai secara otomatis.
+If no menu is assigned to "Primary Menu", the theme displays Home
+plus the seven busiest categories automatically.
 
-== Area Widget ==
+== Widget Areas ==
 
-* Sidebar Utama  - tampil di artikel, arsip, pencarian, dan beranda.
-                   Bila kosong, konten memakai lebar penuh.
-* Footer Kolom 1-4 - bila keempatnya kosong, footer memakai tampilan bawaan
-                   (deskripsi, Terbaru, Populer, Jelajah).
+* Main Sidebar   - displayed on posts, archives, search, and the homepage.
+                   If empty, content uses full width.
+* Footer Column 1-4 - if all four are empty, the footer uses the default
+                   display (description, Latest, Popular, Browse).
 
-== Populer ==
+== Popular ==
 
-Kolom "Populer" memakai penghitung tampilan bawaan tema yang disimpan di
-meta _indfir_views. Kunjungan dari pengguna yang sedang login tidak dihitung.
-Angka mulai terkumpul sejak tema diaktifkan, jadi beberapa hari pertama
-urutannya masih mengikuti tanggal.
+The "Popular" column uses the theme's built-in view counter stored in the
+_indfir_views meta. Visits from logged-in users are not counted. Numbers
+start accumulating once the theme is activated, so during the first few days
+the ordering still follows the date.
 
-== Ukuran Gambar ==
+== Image Sizes ==
 
-* indfir-lead  800x500  - sorotan hero dan blok lebar.
-* indfir-card  520x320  - kartu standar.
-* indfir-hero  700x560  - sorotan bergambar dengan overlay gelap.
-* indfir-thumb 150x120  - thumbnail daftar samping.
+* indfir-lead  800x500  - hero highlights and wide blocks.
+* indfir-card  520x320  - standard cards.
+* indfir-hero  700x560  - featured highlights with dark overlay.
+* indfir-thumb 150x120  - sidebar list thumbnails.
 
-Setelah aktivasi, jalankan plugin regenerate thumbnails agar artikel lama
-punya ukuran-ukuran ini.
+After activation, run a regenerate thumbnails plugin so that older posts
+have these sizes.
 
 == Changelog ==
 
 = 1.0.0 =
-* Rilis pertama.
+* Initial release.

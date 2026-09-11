@@ -14,7 +14,7 @@ get_header();
 
 /*
  * The front page may be the posts index or a static page. When it is a static
- * page the main query holds that page, not posts, so the "Terbaru" list has to
+ * page the main query holds that page, not posts, so the "Latest" list has to
  * run its own query — otherwise the loop would print the static page's raw
  * content (on a site migrated from a page builder, that means raw shortcodes).
  */
@@ -338,7 +338,7 @@ $if_show_blocks = ( $if_paged < 2 );
 	/* ------------------------------------------------------------------
 	 * Block 4 — two overlay heroes + card row, with block 5 as a sidebar
 	 * --------------------------------------------------------------- */
-	$if_b4_title = get_theme_mod( 'indfir_block4_title', 'Teknologi' );
+	$if_b4_title = get_theme_mod( 'indfir_block4_title', 'Technology' );
 	$if_b4_cat   = (int) get_theme_mod( 'indfir_block4_cat', 0 );
 
 	if ( $if_b4_title ) :
@@ -410,7 +410,7 @@ $if_show_blocks = ( $if_paged < 2 );
 						</div>
 
 						<?php
-						$if_b5_title = get_theme_mod( 'indfir_block5_title', 'Sains' );
+						$if_b5_title = get_theme_mod( 'indfir_block5_title', 'Science' );
 						$if_b5_cat   = (int) get_theme_mod( 'indfir_block5_cat', 0 );
 
 						if ( $if_b5_title ) :
@@ -460,7 +460,7 @@ $if_show_blocks = ( $if_paged < 2 );
 	/* ------------------------------------------------------------------
 	 * Block 6 — full-width category showcase
 	 * --------------------------------------------------------------- */
-	$if_b6_title = get_theme_mod( 'indfir_block6_title', 'Trading & Kripto' );
+	$if_b6_title = get_theme_mod( 'indfir_block6_title', 'Trading & Crypto' );
 	$if_b6_cat   = (int) get_theme_mod( 'indfir_block6_cat', 0 );
 
 	if ( $if_b6_title ) :
@@ -562,7 +562,7 @@ $if_show_blocks = ( $if_paged < 2 );
 			<div class="if-layout <?php echo is_active_sidebar( 'sidebar-main' ) ? '' : 'if-layout--full'; ?>">
 				<div>
 					<?php
-					$if_latest_title = get_theme_mod( 'indfir_latest_title', __( 'Terbaru', 'indfir' ) );
+					$if_latest_title = get_theme_mod( 'indfir_latest_title', __( 'Latest', 'indfir' ) );
 					if ( $if_latest_title ) {
 						indfir_section_head( $if_latest_title, 0 );
 					}
@@ -591,7 +591,7 @@ $if_show_blocks = ( $if_paged < 2 );
 						<?php indfir_pagination( $if_latest, $if_paged ); ?>
 
 					<?php else : ?>
-						<p><?php esc_html_e( 'Belum ada artikel.', 'indfir' ); ?></p>
+						<p><?php esc_html_e( 'No articles yet.', 'indfir' ); ?></p>
 					<?php endif; ?>
 				</div>
 
